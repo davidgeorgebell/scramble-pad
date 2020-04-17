@@ -1,18 +1,12 @@
-import React, { useState, useEffect } from "react"
+import React, { useState } from "react"
 
-const ScramblePad = () => {
-  const [notes, setNotes] = useState([])
-
-  useEffect(() => {
-    const notes = localStorage.getItem("scramble-content")
-    if (notes) {
-      setNotes(JSON.parse(notes))
-    }
-  })
+const Pad = () => {
+  const localNotes = localStorage.getItem("scramble-content")
+  const [notes, setNotes] = useState(localNotes)
 
   const handleChange = e => {
     setNotes(e.target.value)
-    localStorage.setItem("scramble-content", JSON.stringify(e.target.value))
+    localStorage.setItem("scramble-content", e.target.value)
   }
 
   return (
@@ -24,10 +18,11 @@ const ScramblePad = () => {
           rows="10"
           placeholder="Add notes here 📝"
           name="ScramblePad"
+          value={notes}
           onChange={handleChange}
         ></textarea>
       </label>
     </form>
   )
 }
-export default ScramblePad
+export default Pad
