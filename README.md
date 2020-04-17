@@ -2,7 +2,7 @@
 
 <img src='/screenshot.png' />
 
-A helpful note pad for saving your notes offline automatically.
+A helpful note pad for saving your notes offline.
 
 ## Built with
 
