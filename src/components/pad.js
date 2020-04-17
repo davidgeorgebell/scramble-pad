@@ -1,8 +1,12 @@
-import React, { useState } from "react"
+import React, { useState, useEffect } from "react"
 
 const Pad = () => {
-  const localNotes = localStorage.getItem("scramble-content")
-  const [notes, setNotes] = useState(localNotes)
+  const [notes, setNotes] = useState([])
+
+  useEffect(() => {
+    const localNotes = localStorage.getItem("scramble-content")
+    setNotes(localNotes)
+  }, [])
 
   const handleChange = e => {
     setNotes(e.target.value)
