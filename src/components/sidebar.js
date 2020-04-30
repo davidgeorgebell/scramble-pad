@@ -4,7 +4,7 @@ const Sidebar = () => {
   return (
     <div className="sidebar">
       <div className="sidebar-content">
-        <h2>scramblepad.space</h2>
+        <h2>scramblepad</h2>
         <p>
           The idea is simple. Get whats in your mind on the page. Scramble Pad
           saves your notes automatically as you write{" "}
